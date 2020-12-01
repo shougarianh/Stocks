@@ -1,0 +1,44 @@
+You need to install some packages before you can run this. Make sure you have pip downloaded with python (i'm not sure
+what it is on MAC OS but I think it might be pip3).
+
+Packages:
+pip install alpha_vantage
+pip install pandas
+pip install matplotlib
+pip install beautifulsoup4
+pip install scikit_learn # this one is less important
+
+Some useful videos:
+https://www.youtube.com/watch?v=d2kXmWzfS0w&t=88s
+https://www.youtube.com/watch?v=kz_NJERCgm8
+
+Program Structure:
+Run main to run the program. It will import the data file and run it every time you run the program. It will generate
+an excel file called companyData.xlsx.
+
+NOTE: This file will be overwritten every time you run main.
+
+The data object can only be called five times every minute (alpha_vantage only allows you 5 calls per minute). There is
+a companies.py file which contains a dictionary of companies. I've commented them out so that you only do one company at
+a time. I suggest that you do the same so as to not have data mismatches. You can add whatever company you want, just
+do one at a time and follow the same structure that I have there.
+
+During program execution, three graphs will be shown. First one will be a close price based on the interval you have set.
+The second one will contain a MACD line and a signal line. Once you x out of both of them, the buy/sell graph will
+appear. I found that the program works best set on a 60 minute interval.
+
+If you want to change the interval in minutes, go to line 12 in data.py. The library allows you "1min", "5min", "15min",
+"30min", and "60min" intervals.
+
+If you want a bigger interval, comment out "interval=..." and change "intraday" in the same line to "daily", "weekly",
+ext...
+
+MACD- Moving Average convergence divergence (google it to find out more)
+
+Signal line - Signal line is derived from MACD line
+
+The program tells you to sell if the MACD line crosses the signal line and is greater than the signal line.
+The program tells you to buy if the MACD line crosses the signal line and is less than the signal line.
+
+
+
