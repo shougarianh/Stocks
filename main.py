@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 plt.style.use('fivethirtyeight')
 
+#This is a program used to query incoming stock data. 
 
 # get the data from the excel file
 df = pd.read_excel('companyData.xlsx')
